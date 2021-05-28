@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.min.js"></script>
+    <style>
+      body{
+        height: 100vh;
+        overflow:hidden;
+      }
+      .container{
+        max-width:990px;
+        height:60vh;
+        margin:auto;
+        border-radius: 10px;
+        border:4px solid grey;
+        position: relative;
+        overflow-y: scroll;
+
+      }
+       .chat-window{
+             width:24%;
+             border-radius: 10px;
+             text-align: center;
+             background-color:#867AE9;
+             color:white;
+             margin:12px 14px;
+             padding: 10px;
+             font-family: cursive;
+           }
+           .chat-windows{
+            width: 24%;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #FAF1E6;
+            color:grey;
+            margin:20px 14px;
+            padding: 10px;
+            font-weight: bolder;
+            font-family: cursive;
+           }
+           .left{
+             float: left;
+             clear: both;
+           }
+           .right{
+             float: right;
+             clear: both;
+           }
+           .chat-form{
+             display: block;
+             margin: auto;
+            text-align: center;
+            max-width: 980px;
+            width:100%;
+           }
+           .form{
+             margin-top: 20px;
+           }
+           .chat-form input{
+             width:80%;
+             outline: none;
+             border:2px solid black;
+             border-radius: 10px;
+             height: 34px;
+             text-align:center;
+           }
+           .chat-form a{
+             text-decoration: none;
+             text-align: center;
+             background-color: blue;
+             letter-spacing:1px;
+             border-radius:10px;
+             color:white;
+             font-size:20px;
+             padding: 10px;
+           }
+           .heading{
+             text-align: center;
+           }
+           .heading h2{
+             font-size: 30px;
+             font-family: cursive;
+             color: rgb(30, 185, 212);
+           }
+           #submit{
+             outline: none;
+             color:white;
+             background-color: red;
+             letter-spacing: 2px;
+             padding: 10px;
+             margin: 5px;
+             border: none;
+             border-radius: 5px;
+           }
+    </style>
+  
+</head>
+<body>
+  <div class="heading">
+    <h2>Clavy Group Chat</h2>
+  </div>
+      <div class="container">
+        <div class="chat-window left">Hey your are right</div>
+        <div class="chat-windows right">Hey varun</div>
+        </div>
+        <div class="form">
+        <form class="chat-form" action=`${process.env.ANOTHER}` method="post">
+          <input type="text"  class="chat-input" placeholder="Enter the messages" name="num1"/>
+          <a href="javascript:void(0)" class="chat-send">Send</a>
+          <button type="submit" id="submit">Submitbutton</button>
+        </form>
+        </div>
+      <script src="client.js"></script>
+</body>
+</html>
